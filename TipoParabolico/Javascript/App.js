@@ -15,4 +15,3 @@ function CalcularRecorrido() {
   proyectil.crearSpan();
 }
 
-fkldjgrkgj
