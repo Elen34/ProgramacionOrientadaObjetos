@@ -1,4 +1,4 @@
-# Repositorio para practicas de Programacion Orientada a Objetos
+# Repositorio para prácticas de Programación Orientada a Objetos
 
 
-Practicas de Programacion Orientada a Objetos
+Prácticas de Programación Orientada a Objetos
