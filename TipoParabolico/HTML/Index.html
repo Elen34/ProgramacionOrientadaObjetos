@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tiro Parabolico</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="./../CSS/Style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron mt-3">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Ingresa la velocidad inicial del proyectil:</label>
+              <input
+                type="number"
+                placeholder="Ingresa la velocidad inicial en m/s"
+                class="form-control"
+                id="velocidad"
+              />
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Ingresa los grados del proyectil:</label>
+              <input
+                type="number"
+                id="angulo"
+                placeholder="Ingresa los grados del proyectil"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-outline-primary btn-block" id="btnCalcular">
+              Calcular
+            </button>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12">
+            <div class="contenedor" id="contenedor">
+              <span style="bottom:0%; left:0%"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./../Javascript/Proyectil.class.js"></script>
+    <script src="./../Javascript/App.js"></script>
+  </body>
+</html>
