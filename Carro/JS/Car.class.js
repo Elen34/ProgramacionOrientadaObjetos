@@ -1,40 +1,56 @@
 class Car{
-    PosicionX = 0;
-    PosicionY = 0;
+    posicionX = 0;
+    posicionY = 0;
 
-    constructor(PosicionX, PosicionY){
-        this.PosicionX = PosicionX;
-        this.PosicionY = PosicionY;
+    constructor(posicionX, posicionY){
+        this.posicionX = posicionX;
+        this.posicionY = posicionY;
     }
 
     MoverCarro(direccion, imagen){
 
         switch (direccion){
             case "ArrowUp":
-            if(this.PosicionY <= 0) return; // No se salga del recuadro    
+            if(this.posicionY <= 0) return; // No se salga del recuadro    
             imagen.src = './../Assets/CarroTrasero.jpeg'; //Cambiar de imagen
-            imagen.style.top = `${this.PosicionY--}%`; // Hacer caminar el carro
+            imagen.style.top = `${this.posicionY-=10}px`; // Hacer caminar el carro
             break;
 
             case "ArrowDown":
-            if(this.PosicionY >= 90) return;
+            if(this.posicionY >= 924) return;
             imagen.src = './../Assets/CarroFrontal.jpeg';
-            imagen.style.down = `${this.PosicionY++}%`; // Hacer caminar el carro
+            imagen.style.top = `${this.posicionY+=10}px`; // Hacer caminar el carro
             break;
 
             case "ArrowLeft":
-            if(this.PosicionX <= 0) return;    
+            if(this.posicionX <= 0) return;    
             imagen.src = './../Assets/CarrolateralIzq.jpeg';
-            imagen.style.left = `${this.PosicionX--}%`; // Hacer caminar el carro
+            imagen.style.left = `${this.posicionX-=10}px`; // Hacer caminar el carro
             break;
 
             case "ArrowRight":
-            if(this.PosicionX >= 94) return;
+            if(this.posicionX >= 540) return;
             imagen.src = './../Assets/CarrolateralDer.jpeg';
-            imagen.style.right = `${this.PosicionX++}%`; // Hacer caminar el carro
+            imagen.style.left = `${this.posicionX+=10}px`; // Hacer caminar el carro
             break;
 
         }
+    }
 
+   Verificarcolision(PosicionesCaquitas = []) {
+        
+    console.log(this.posicionX, this.positionY);
+    
+        for(let i=0; i<PosicionesCaquitas.length; i++){
+            if(
+                this.posicionX >= PosicionesCaquitas[i].styleleft && 
+                this.posicionX <= PosicionesCaquitas[i].styleLeftMax && 
+                this.posicionY >= PosicionesCaquitas[i].sytletop && 
+                this.posicionY <= PosicionesCaquitas[i].sytleTopMax
+            ){
+                return i;
+            }
+        }
+        return null;
     }
 }
