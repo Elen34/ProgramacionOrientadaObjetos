@@ -7,10 +7,8 @@ static EliminarPremio(contenedor, id){
 }    
 
     constructor(posicionX, posicionY){
-
        this.posicionX = posicionX;
        this.posicionY = posicionY; 
-
     }
 
     crearImagen(contenedor,SizeMarginLeft){
@@ -19,18 +17,18 @@ static EliminarPremio(contenedor, id){
         Imagen.src = './../Assets/Popo.jpeg';
         Imagen.style.width = "50px";
         Imagen.id = `imagen${Math.random().toString().split('.')[1]}`;
-        
+    
         const styleleft = this.posicionX - SizeMarginLeft;
         const sytletop = this.posicionY;
 
         Imagen.style.left = `${styleleft}px `; // Para que agarre los pixeles de la imagen
-        Imagen.style.top = `${sytletop-25}px `; 
+        Imagen.style.top = `${sytletop-15}px `; 
 
         contenedor.appendChild(Imagen);
 
         return {
             id:Imagen.id,
-            styleleft:styleleft-50,
+            styleleft:styleleft-100,
             sytletop:sytletop-100,
             styleLeftMax: styleleft + 50,
             sytleTopMax: sytletop + 50

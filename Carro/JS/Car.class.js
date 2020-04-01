@@ -16,12 +16,6 @@ class Car{
             imagen.style.top = `${this.posicionY-=10}px`; // Hacer caminar el carro
             break;
 
-            case "ArrowDown":
-            if(this.posicionY >= 924) return;
-            imagen.src = './../Assets/CarroFrontal.jpeg';
-            imagen.style.top = `${this.posicionY+=10}px`; // Hacer caminar el carro
-            break;
-
             case "ArrowLeft":
             if(this.posicionX <= 0) return;    
             imagen.src = './../Assets/CarrolateralIzq.jpeg';
@@ -29,18 +23,21 @@ class Car{
             break;
 
             case "ArrowRight":
-            if(this.posicionX >= 540) return;
+            if(this.posicionX >= 1050) return;
             imagen.src = './../Assets/CarrolateralDer.jpeg';
             imagen.style.left = `${this.posicionX+=10}px`; // Hacer caminar el carro
             break;
 
+            case "ArrowDown":
+            if(this.posicionY >= 475) return;
+            imagen.src = './../Assets/CarroFrontal.jpeg';
+            imagen.style.top = `${this.posicionY+=10}px`; // Hacer caminar el carro
+            break;
         }
     }
 
    Verificarcolision(PosicionesCaquitas = []) {
         
-    console.log(this.posicionX, this.positionY);
-    
         for(let i=0; i<PosicionesCaquitas.length; i++){
             if(
                 this.posicionX >= PosicionesCaquitas[i].styleleft && 
