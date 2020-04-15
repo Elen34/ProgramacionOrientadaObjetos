@@ -1,18 +1,19 @@
 const Imagen = document.getElementById("CuerpoHumano");
-const ImprimirNombre = document.getElementById("ImprimirPartesHumano");
-const idioma = document.getElementById("Idioma");
+const ImprimirPartesCuerpo = document.getElementById("ImprimirPartesHumano");
 
 EventListener();
 
 function EventListener(){
-    Imagen.addEventListener("mouseover", PartesCuerpo);
+    Imagen.addEventListener("mousemove", PartesCuerpo);
 }
 
-function PartesCuerpo(){
-
-    const cursor = new CuerpoHumano(event.x, event.y);
-    cursor.SeleccionarPartesCuerpo(ImprimirNombre);
-    console.log(cursor);
-    console.log(ImprimirNombre);
+function PartesCuerpo(event){
     
+    const Idioma = document.getElementById("Idioma").value;
+
+    if(Idioma != ''){
+
+       ImprimirPartesCuerpo.innerText 
+       = CuerpoHumano.SeleccionarPartesCuerpo(event.x,event.y, Idioma);  
+    }    
 }
